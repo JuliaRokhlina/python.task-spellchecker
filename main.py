@@ -1,6 +1,6 @@
 from math import log
 
-f = open("dictionary-eng.txt")
+f = open("dictionary.txt", encoding='utf-8', newline='')
 words = [line.strip() for line in f.readlines()]
 word_popular = dict((word, log(i + 1)) for i, word in enumerate(words))
 max_word = max(len(x) for x in words)
@@ -28,6 +28,7 @@ def distance(a, b):
 
 def spell_check(s):
     result = s.split()
+    old = s.split()
     for i in range(len(result)):
         found = False
         word = result[i]
@@ -42,7 +43,16 @@ def spell_check(s):
                 break
         if not found:
             result[i] = infer_spaces(result[i])
-    return result
+    fancy_print(result, old)
+
+
+def fancy_print(new, old):
+    print("Ваша строка: " + " ".join(old))
+    print("Результат: " + " ".join(new))
+    print()
+    for i in range(len(new)):
+        if new[i] != old[i]:
+            print(old[i] + " -> " + new[i])
 
 
 def infer_spaces(s):
@@ -74,4 +84,4 @@ def infer_spaces(s):
     return " ".join(reversed(out))
 
 
-print(spell_check('thedepriving mottocycle'))
+spell_check('енутый блятб')
