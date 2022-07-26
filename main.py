@@ -1,9 +1,48 @@
 from math import log
 
-f = open("dictionary.txt")
+f = open("dictionary-eng.txt")
 words = [line.strip() for line in f.readlines()]
 word_popular = dict((word, log(i + 1)) for i, word in enumerate(words))
 max_word = max(len(x) for x in words)
+len_dict = dict([(i, []) for i in range(1, max_word + 1)])
+for w in words:
+    if len(w) != 0:
+        len_dict[len(w)].append(w)
+
+
+def distance(a, b):
+    n, m = len(a), len(b)
+    if n > m:
+        a, b = b, a
+        n, m = m, n
+    current_row = range(n + 1)  # 0 ряд - только вставки
+    for i in range(1, m + 1):
+        previous_row, current_row = current_row, [i] + [0] * n
+        for j in range(1, n + 1):
+            add, delete, change = previous_row[j] + 1, current_row[j - 1] + 1, previous_row[j - 1]
+            if a[j - 1] != b[i - 1]:
+                change += 1
+            current_row[j] = min(add, delete, change)
+    return current_row[n]
+
+
+def spell_check(s):
+    result = s.split()
+    for i in range(len(result)):
+        found = False
+        word = result[i]
+        length = len(word)
+        for j in range(max(length - 2, 1), min(length + 3, max_word)):
+            for candidate in len_dict[j]:
+                if distance(word, candidate) < 3:
+                    result[i] = candidate
+                    found = True
+                    break
+            if found:
+                break
+        if not found:
+            result[i] = infer_spaces(result[i])
+    return result
 
 
 def infer_spaces(s):
@@ -35,4 +74,4 @@ def infer_spaces(s):
     return " ".join(reversed(out))
 
 
-print(infer_spaces("bergamotorcycle"))
+print(spell_check('thedepriving mottocycle'))
