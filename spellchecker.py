@@ -31,8 +31,8 @@ class SpellChecker:
                 current_row[j] = min(add, delete, change)
         return current_row[n]
 
-    def spell_check(self, s):
-        """Исправление орфографических ошибок в строке s"""
+    def spell_check(self, s, num=9e999):
+        """Исправление первых num орфографических ошибок в строке s"""
 
         result = s.split()
         old = s.split()
@@ -51,6 +51,7 @@ class SpellChecker:
                     dist = self.distance(word, candidate)
                     if dist == 1:
                         result[i] = candidate
+                        num -= 1
                         found = True
                         break
                     elif dist == 2 and possible == "":
@@ -61,6 +62,7 @@ class SpellChecker:
             if not found:
                 if possible:
                     result[i] = possible
+                    num -= 1
                 elif self.hyphen_to_space(result[i]):
                     result[i] = result[i].replace("-", " ")
                 else:
@@ -69,6 +71,8 @@ class SpellChecker:
                         if new_w not in self.words:
                             result[i] = old[i]
                             found_all[i] = False
+            if num <= 0:
+                break
         self.fancy_print(result, old, found_all)
         self.f.close()
         return " ".join(result)

@@ -57,15 +57,16 @@ class GridTestMethods(unittest.TestCase):
         expected = ""
         self.assertEqual(self.spellchecker.spell_check(original), expected)
 
-    def test_extra_hyphen(self):
-        original = "нечто-лишнее"
-        expected = "нечто лишнее"
-        self.assertEqual(self.spellchecker.spell_check(original), expected)
-
     def test_not_fixable(self):
         original = "ъхврварпв ваопикц"
         expected = "ъхврварпв ваопикц"
         self.assertEqual(self.spellchecker.spell_check(original), expected)
+
+    def test_first_n_typos(self):
+        original = "нойти певые четырре ашибки страки"
+        expected = "найти первые четыре ошибки страки"
+        num = 4
+        self.assertEqual(self.spellchecker.spell_check(original, num), expected)
 
 
 if __name__ == '__main__':
