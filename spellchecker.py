@@ -88,6 +88,8 @@ class SpellChecker:
 
     def infer_spaces(self, s):
         """Подбор разделения слова s на несколько"""
+        # Решение  @srikavineehari:
+        # https://stackoverflow.com/questions/47730524/spell-check-and-return-the-corrected-term-in-python
 
         # Find the best match for the i first characters, assuming popularity has
         # been built for the i-1 first characters.

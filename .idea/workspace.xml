@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03e0699e-56ea-44af-bf21-2ead869d2e0e" name="Default Changelist" comment="precise algorithm">
+    <list default="true" id="03e0699e-56ea-44af-bf21-2ead869d2e0e" name="Default Changelist" comment="first N typos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spellchecker.py" beforeDir="false" afterPath="$PROJECT_DIR$/spellchecker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659005596813</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first N typos">
+      <created>1659009197791</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659009197791</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +182,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tests" />
     <MESSAGE value="precise algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="precise algorithm" />
+    <MESSAGE value="first N typos" />
+    <option name="LAST_COMMIT_MESSAGE" value="first N typos" />
   </component>
   <component name="WindowStateProjectService">
     <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1659009124825">
@@ -195,9 +202,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659009124825" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1659005600253">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1659009201459">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1659005600253" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1659009201459" />
   </component>
 </project>
