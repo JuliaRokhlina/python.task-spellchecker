@@ -45,16 +45,23 @@ class SpellChecker:
             length = len(word)
             possible_length = [length, min(length + 1, self.max_word), max(length - 1, 1),
                                min(length + 2, self.max_word), max(length - 2, 1)]
+            possible = ""
             for j in possible_length:
                 for candidate in self.len_dict[j]:
-                    if self.distance(word, candidate) < 3:
+                    dist = self.distance(word, candidate)
+                    if dist == 1:
                         result[i] = candidate
                         found = True
                         break
+                    elif dist == 2 and possible == "":
+                        possible = candidate
+                        continue
                 if found:
                     break
             if not found:
-                if self.hyphen_to_space(result[i]):
+                if possible:
+                    result[i] = possible
+                elif self.hyphen_to_space(result[i]):
                     result[i] = result[i].replace("-", " ")
                 else:
                     result[i] = self.infer_spaces(result[i])

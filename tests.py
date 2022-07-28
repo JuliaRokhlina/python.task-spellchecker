@@ -62,6 +62,11 @@ class GridTestMethods(unittest.TestCase):
         expected = "нечто лишнее"
         self.assertEqual(self.spellchecker.spell_check(original), expected)
 
+    def test_not_fixable(self):
+        original = "ъхврварпв ваопикц"
+        expected = "ъхврварпв ваопикц"
+        self.assertEqual(self.spellchecker.spell_check(original), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
