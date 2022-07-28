@@ -5,7 +5,7 @@ class SpellChecker:
     def __init__(self):
         self.f = open("dictionary.txt", encoding='utf-8', newline='')
         self.words = [line.split()[0] for line in self.f.readlines()]
-        self.word_popular = dict((word, log(i + 1)) for i, word in enumerate(self.words))
+        self.word_cost = dict((word, log(i + 1)) for i, word in enumerate(self.words))
         self.max_word = max(len(x) for x in self.words)
         self.len_dict = dict([(i, []) for i in range(1, self.max_word + 1)])
         for w in self.words:
@@ -91,25 +91,25 @@ class SpellChecker:
         # Решение  @srikavineehari:
         # https://stackoverflow.com/questions/47730524/spell-check-and-return-the-corrected-term-in-python
 
-        # Find the best match for the i first characters, assuming popularity has
+        # Find the best match for the i first characters, assuming costity has
         # been built for the i-1 first characters.
-        # Returns a pair (match_popular, match_length).
+        # Returns a pair (match_cost, match_length).
         def best_match(i):
-            candidates = enumerate(reversed(popular[max(0, i - self.max_word):i]))
-            return min((c + self.word_popular.get(s[i-k-1:i], 9e999), k+1) for k, c in candidates)
+            candidates = enumerate(reversed(cost[max(0, i - self.max_word):i]))
+            return min((c + self.word_cost.get(s[i-k-1:i], 9e999), k+1) for k, c in candidates)
 
-        # Build the popular array.
-        popular = [0]
+        # Build the cost array.
+        cost = [0]
         for i in range(1, len(s) + 1):
             c, k = best_match(i)
-            popular.append(c)
+            cost.append(c)
 
-        # Backtrack to recover the most popular string.
+        # Backtrack to recover the most cost string.
         out = []
         i = len(s)
         while i > 0:
             c, k = best_match(i)
-            assert c == popular[i]
+            assert c == cost[i]
             out.append(s[i-k:i])
             i -= k
 
