@@ -2,7 +2,7 @@ import spellchecker
 
 
 checker = spellchecker.SpellChecker()
-print("Введите текст без знаков препинания и заглавных букв:")
+print("Введите текст без знаков препинания:")
 s = input()
 print("Введите, сколько первых ошибок найти (введите '-', если все)")
 n = input()

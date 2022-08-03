@@ -2,14 +2,15 @@ from math import log
 
 
 class SpellChecker:
-    def __init__(self):
-        self.f = open("dictionary.txt", encoding='utf-8', newline='')
-        self.words = [line.split()[0] for line in self.f.readlines()]
+    def __init__(self, path="dictionary.txt"):
+        f = open(path, encoding='utf-8', newline='')
+        self.words = [line.split()[0] for line in f.readlines()]
         self.word_cost = dict((word, log(i + 1)) for i, word in enumerate(self.words))
         self.max_word = max(len(x) for x in self.words)
         self.len_dict = dict([(i, []) for i in range(1, self.max_word + 1)])
         for w in self.words:
             self.len_dict[len(w)].append(w)
+        f.close()
 
     @staticmethod
     def distance(a, b):
@@ -77,7 +78,6 @@ class SpellChecker:
             if num <= 0:
                 break
         self.fancy_print(result, old, found_all)
-        self.f.close()
         return " ".join(result)
 
     def hyphen_to_space(self, s):
