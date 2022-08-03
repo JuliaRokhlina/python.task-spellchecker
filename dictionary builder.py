@@ -11,8 +11,10 @@ special = re.compile("[,.?/…!\"\'*–—();:«»„“1234567890\[\]]")
 def add_words(collection):
     dict_file = open("dictionary.txt", 'r+', encoding='utf-8')
     for word in collection:
-        word_fixed = re.sub(special, "", word).lower()
-        if word_fixed in dictionary:
+        word_fixed = re.sub(special, "", word)
+        if word_fixed.lower() in dictionary:
+            dictionary[word_fixed.lower()] += 1
+        elif word_fixed in dictionary:
             dictionary[word_fixed] += 1
         else:
             dictionary[word_fixed] = 1

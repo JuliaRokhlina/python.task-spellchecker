@@ -68,6 +68,16 @@ class GridTestMethods(unittest.TestCase):
         num = 4
         self.assertEqual(self.spellchecker.spell_check(original, num), expected)
 
+    def test_first_capital(self):
+        original = "иван петрович"
+        expected = "Иван Петрович"
+        self.assertEqual(self.spellchecker.spell_check(original), expected)
+
+    def test_all_capitals(self):
+        original = "ооО"
+        expected = "ООО"
+        self.assertEqual(self.spellchecker.spell_check(original), expected)
+
 
 if __name__ == '__main__':
     unittest.main()

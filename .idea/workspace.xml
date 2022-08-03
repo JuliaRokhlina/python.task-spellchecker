@@ -19,9 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03e0699e-56ea-44af-bf21-2ead869d2e0e" name="Default Changelist" comment="input fix">
+    <list default="true" id="03e0699e-56ea-44af-bf21-2ead869d2e0e" name="Default Changelist" comment="input fix actual">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionary builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spellchecker.py" beforeDir="false" afterPath="$PROJECT_DIR$/spellchecker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Unittests for tests.GridTestMethods">
     <configuration name="dictionary builder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spellchecker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,7 +93,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.GridTestMethods.test_missing_spaces" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.GridTestMethods" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="spellchecker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,11 +103,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.GridTestMethods.test_missing_spaces&quot;" />
+      <option name="_new_target" value="&quot;tests.GridTestMethods&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.GridTestMethods.test_not_fixable" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.GridTestMethods.test_all_capitals" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="spellchecker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,11 +117,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.GridTestMethods.test_not_fixable&quot;" />
+      <option name="_new_target" value="&quot;tests.GridTestMethods.test_all_capitals&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.GridTestMethods.test_typo_with_hyphen" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.GridTestMethods.test_capitals" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="spellchecker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -128,17 +131,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.GridTestMethods.test_typo_with_hyphen&quot;" />
+      <option name="_new_target" value="&quot;tests.GridTestMethods.test_capitals&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python tests.Unittests for tests.GridTestMethods.test_not_fixable" />
-        <item itemvalue="Python tests.Unittests for tests.GridTestMethods.test_typo_with_hyphen" />
-        <item itemvalue="Python tests.Unittests for tests.GridTestMethods.test_missing_spaces" />
+        <item itemvalue="Python tests.Unittests for tests.GridTestMethods" />
         <item itemvalue="Python.dictionary builder" />
+        <item itemvalue="Python tests.Unittests for tests.GridTestMethods.test_all_capitals" />
+        <item itemvalue="Python tests.Unittests for tests.GridTestMethods.test_capitals" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659533181327</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="input fix actual">
+      <created>1659546624852</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659546624852</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,29 +240,30 @@
     <MESSAGE value="(semi)final" />
     <MESSAGE value="(3/4)final" />
     <MESSAGE value="input fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="input fix" />
+    <MESSAGE value="input fix actual" />
+    <option name="LAST_COMMIT_MESSAGE" value="input fix actual" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1659546605416">
+    <state width="757" height="210" key="GridCell.Tab.0.bottom" timestamp="1659549402501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659546605416" />
-    <state width="757" height="210" key="GridCell.Tab.0.center" timestamp="1659546605416">
+    <state width="757" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1659549402501" />
+    <state width="757" height="210" key="GridCell.Tab.0.center" timestamp="1659549402501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659546605416" />
-    <state width="757" height="210" key="GridCell.Tab.0.left" timestamp="1659546605415">
+    <state width="757" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1659549402501" />
+    <state width="757" height="210" key="GridCell.Tab.0.left" timestamp="1659549402501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659546605415" />
-    <state width="757" height="210" key="GridCell.Tab.0.right" timestamp="1659546605416">
+    <state width="757" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1659549402501" />
+    <state width="757" height="210" key="GridCell.Tab.0.right" timestamp="1659549402501">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659546605416" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1659533194606">
+    <state width="757" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1659549402501" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1659546627136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1659533194606" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1659546627136" />
     <state x="478" y="116" width="579" height="592" key="find.popup" timestamp="1659018580873">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

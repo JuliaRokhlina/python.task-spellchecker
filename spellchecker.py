@@ -42,6 +42,9 @@ class SpellChecker:
             word = result[i]
             if word in self.words:
                 continue
+            result[i] = self.check_capitals(word)
+            if result[i] != word:
+                continue
             length = len(word)
             possible_length = [length, min(length + 1, self.max_word), max(length - 1, 1),
                                min(length + 2, self.max_word), max(length - 2, 1)]
@@ -114,6 +117,17 @@ class SpellChecker:
             i -= k
 
         return " ".join(reversed(out))
+
+    def check_capitals(self, word):
+        """Проверка написания слова с заглавной буквы/полностью заглавными"""
+
+        first_letter = word.replace(word[0], word[0].upper())
+        if first_letter in self.words:
+            return first_letter
+        all_letters = word.upper()
+        if all_letters in self.words:
+            return first_letter
+        return word
 
     @staticmethod
     def fancy_print(new, old, found_all):
