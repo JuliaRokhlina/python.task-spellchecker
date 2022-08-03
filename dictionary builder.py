@@ -22,5 +22,5 @@ def add_words(collection):
 
 
 print('Введите адрес файла:')
-file = open(input(), encoding='utf-8', newline='')
+file = open(input(), newline='')
 add_words(file.read().split())
